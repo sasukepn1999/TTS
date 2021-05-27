@@ -14,7 +14,7 @@ from TTS.speaker_encoder.losses import AngleProtoLoss, GE2ELoss
 from TTS.speaker_encoder.model import SpeakerEncoder
 from TTS.speaker_encoder.utils.io import save_best_model, save_checkpoint
 from TTS.speaker_encoder.utils.visual import plot_embeddings
-from TTS.tts.datasets.preprocess import load_meta_data
+from TTS.tts.datasets import load_meta_data
 from TTS.utils.arguments import init_training
 from TTS.utils.audio import AudioProcessor
 from TTS.utils.generic_utils import count_parameters, remove_experiment_folder, set_init_dict
