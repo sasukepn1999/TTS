@@ -94,6 +94,20 @@ def get_preprocessor_by_name(name):
 ########################
 
 
+def vivos(root_path, meta_file):
+    """Normalizes Vivos meta data files to TTS format."""
+    txt_file = os.path.join(root_path, meta_file)
+    items = []
+    with open(txt_file, "r") as ttf:
+        for line in ttf:
+            line = line[:-1]
+            cols = line.split("|")
+            wav_file = cols[0]
+            text = cols[1]
+            speaker_name = wav_file.split('/')[-1].split('_')[0]
+            items.append([text, wav_file, speaker_name])
+    return items
+
 def tweb(root_path, meta_file):
     """Normalize TWEB dataset.
     https://www.kaggle.com/bryanpark/the-world-english-bible-speech-dataset

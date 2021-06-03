@@ -80,12 +80,12 @@ class CharactersConfig(Coqpit):
     ):
         """Check config fields"""
         c = asdict(self)
-        check_argument("pad", c, prerequest="characters", restricted=True)
-        check_argument("eos", c, prerequest="characters", restricted=True)
-        check_argument("bos", c, prerequest="characters", restricted=True)
-        check_argument("characters", c, prerequest="characters", restricted=True)
+        check_argument("pad", c, restricted=True)
+        check_argument("eos", c, restricted=True)
+        check_argument("bos", c, restricted=True)
+        check_argument("characters", c, restricted=True)
         check_argument("phonemes", c, restricted=True)
-        check_argument("punctuations", c, prerequest="characters", restricted=True)
+        check_argument("punctuations", c, restricted=True)
 
 
 @dataclass
